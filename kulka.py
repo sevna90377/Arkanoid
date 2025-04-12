@@ -28,4 +28,6 @@ class Kulka(pygame.sprite.Sprite):
     def sprawdz_kolicje(self, platform):
         
         # krawędzie ekranu
-        
+        if self.rect.x <= 0 or self.rect.right >= SZEROKOSC_EKRANU:
+            self.predkosc.x *= -1
+
