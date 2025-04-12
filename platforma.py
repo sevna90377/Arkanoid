@@ -7,7 +7,7 @@ class Platforma(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
         self.obraz = pygame.image.load('images/pad.png')
-        self.porusza_sie
+        self.porusza_sie = 0
         self.zresetuj_pozycje()
         
 

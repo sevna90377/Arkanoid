@@ -11,14 +11,21 @@ class Kulka(pygame.sprite.Sprite):
         self.obraz = pygame.image.load("images/ball.png")
         self.zresetuj_pozycje()
         self.r = 16
-        self.przegrana = False
-
-
-
-
 
 
     def zresetuj_pozycje(self):
         self.wspolrzedne = vec(SZEROKOSC_EKRANU/2, WYSOKOSC_EKRANU - 140)
         self.rect = self.obraz.get_rect(center=self.wspolrzedne)
+        self.predkosc = vec(0, -10)
+        self.kat_nachylenia = random.randrange(-30, 30)
+        self.predkosc.rotate_ip(self.kat_nachylenia)
+        self.przegrana = False
+
+    def aktualizuj(self, platforma):
+        self.wspolrzedne += self.predkosc
+        self.rect.center = self.wspolrzedne
+
+    def sprawdz_kolicje(self, platform):
+        
+        # krawędzie ekranu
         
